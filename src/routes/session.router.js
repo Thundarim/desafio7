@@ -109,7 +109,7 @@ router.get("/faillogin", async (req, res ) => {
 router.get("/realtimeproducts", isAuthenticated, isAdmin, (req, res) => {
 });
 
-router.get("/products", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         if (!req.session.cart) {
             const newCart = await cartManager.createCart();

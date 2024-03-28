@@ -71,7 +71,7 @@ router.delete("/products/:pid", isLoggedIn, async (req, res) => {
 
 router.get("/cart", isLoggedIn, (req, res) => {
     if (req.session.user.role === 'admin') {
-        cartManager.getAllCarts()
+        cartManager.getCarts()
             .then(carts => {
                 res.render("cart", { carts: carts });
             })
